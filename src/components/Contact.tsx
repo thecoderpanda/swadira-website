@@ -30,23 +30,28 @@ export function Contact() {
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const openWhatsApp = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = [
-      "*New Enquiry from SwadIra website*",
-      "",
-      `*Name:* ${form.name || "—"}`,
-      `*Phone:* ${form.phone || "—"}`,
-      `*Email:* ${form.email || "—"}`,
-      `*Event:* ${form.event || "—"}`,
-      `*Guests:* ${form.guests || "—"}`,
-      "",
-      `*Notes:*`,
-      form.notes || "—",
-    ].join("\n");
-    const url = `https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(msg)}`;
-    if (typeof window !== "undefined") window.open(url, "_blank");
-    setSent(true);
+    setError(null);
+    setSending(true);
+    try {
+      const res = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ source: "Contact form", ...form }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok)
+        throw new Error(data.error || "Failed to send");
+      setSent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -134,7 +139,7 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.15 }}
-            onSubmit={openWhatsApp}
+            onSubmit={submit}
             className="lg:col-span-7 grid gap-8"
           >
             <Field
@@ -187,11 +192,21 @@ export function Contact() {
 
             <button
               type="submit"
-              className="btn-gold mt-4 self-start inline-flex items-center gap-3"
+              disabled={sending || sent}
+              className="btn-gold mt-4 self-start inline-flex items-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed"
             >
               <MessageCircle size={16} />
-              {sent ? "Opened on WhatsApp ✦" : "Send on WhatsApp"}
+              {sent
+                ? "Enquiry sent ✦"
+                : sending
+                  ? "Sending…"
+                  : "Send Enquiry"}
             </button>
+            {error && (
+              <div className="font-sans text-xs text-red-300/90 tracking-wider">
+                {error}
+              </div>
+            )}
           </motion.form>
         </div>
       </div>

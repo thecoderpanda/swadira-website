@@ -49,25 +49,28 @@ export default function BuildYourMenuPage() {
         : [...f.cuisines, c],
     }));
 
-  const submit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
+
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = [
-      "*New Menu Brief from SwadIra website*",
-      "",
-      `*Name:* ${form.name || "—"}`,
-      `*Phone:* ${form.phone || "—"}`,
-      `*Email:* ${form.email || "—"}`,
-      `*Event:* ${form.event || "—"}`,
-      `*Cuisines:* ${form.cuisines.join(", ") || "—"}`,
-      `*Guests:* ${form.guests || "—"}`,
-      `*Date:* ${form.date || "—"}`,
-      "",
-      `*Notes:*`,
-      form.notes || "—",
-    ].join("\n");
-    const url = `https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(msg)}`;
-    if (typeof window !== "undefined") window.open(url, "_blank");
-    setStep(4);
+    setSendError(null);
+    setSending(true);
+    try {
+      const res = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ source: "Build Your Menu wizard", ...form }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok)
+        throw new Error(data.error || "Failed to send");
+      setStep(4);
+    } catch (err) {
+      setSendError(err instanceof Error ? err.message : "Failed to send");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -441,15 +444,22 @@ export default function BuildYourMenuPage() {
                 <ArrowRight size={14} />
               </button>
             ) : (
-              <button
-                type="button"
-                onClick={submit}
-                disabled={!canAdvance}
-                className="btn-gold disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:transform-none"
-              >
-                <MessageCircle size={14} />
-                Send on WhatsApp
-              </button>
+              <div className="flex flex-col items-end gap-2">
+                <button
+                  type="button"
+                  onClick={submit}
+                  disabled={!canAdvance || sending}
+                  className="btn-gold disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:transform-none"
+                >
+                  <MessageCircle size={14} />
+                  {sending ? "Sending…" : "Send My Brief"}
+                </button>
+                {sendError && (
+                  <div className="font-sans text-xs text-red-300/90 tracking-wider">
+                    {sendError}
+                  </div>
+                )}
+              </div>
             )}
           </div>
         )}
