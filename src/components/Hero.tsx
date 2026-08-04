@@ -126,8 +126,7 @@ export function Hero() {
             priority
             className="relative w-[320px] sm:w-[460px] md:w-[600px] lg:w-[720px] h-auto"
             style={{
-              filter:
-                "brightness(1.18) contrast(1.08) saturate(1.15) drop-shadow(0 8px 24px rgba(0,0,0,0.55))",
+              filter: "drop-shadow(0 10px 30px rgba(0,0,0,0.55))",
             }}
           />
         </motion.div>
