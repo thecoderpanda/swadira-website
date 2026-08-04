@@ -52,8 +52,10 @@ export function Footer() {
             <span className="h-px w-10 bg-gold-400/60" />
           </div>
           <p className="mt-6 max-w-xl font-serif text-cream-50/70 leading-relaxed">
-            Three generations of Vidarbha hospitality — plated with modern
-            finesse. Proudly rooted in Nagpur since 1990.
+            SwadIra (2026) is the modern face of{" "}
+            <span className="text-gold-300">Sanjay Naidu Caterers</span>,
+            founded in Nagpur in 1990. Same kitchen. Same hands. A new name
+            for the next chapter.
           </p>
 
           <div className="mt-8 flex gap-3">

@@ -42,7 +42,7 @@ export function Story() {
           as="h2"
           from="up"
           className="font-display text-3xl md:text-5xl leading-tight text-cream-50 max-w-3xl"
-          text="A family kitchen. Three generations. One promise."
+          text="A family kitchen since 1990. One promise, kept every plate."
         />
 
         <div className="mt-16 grid md:grid-cols-12 gap-10 md:gap-14 items-start">
@@ -57,7 +57,7 @@ export function Story() {
               Sanjay Naidu
             </div>
             <div className="mt-2 font-sans text-[0.65rem] tracking-[0.4em] uppercase text-gold-400">
-              Founder · Head Chef
+              Founder · Sanjay Naidu Caterers
             </div>
             <div className="mt-6 h-px w-16 bg-gold-500/40" />
             <p className="mt-6 font-serif text-base text-cream-50/70 leading-relaxed">
@@ -74,10 +74,11 @@ export function Story() {
             className="md:col-span-7 space-y-5 font-serif text-base md:text-lg leading-relaxed text-cream-50/85"
           >
             <p>
-              Sanjay Naidu has been feeding Nagpur for over{" "}
-              <span className="text-gold-300">40 years</span>. What began as a
-              small family kitchen grew into one of Central India's most
-              trusted catering houses.
+              Sanjay Naidu founded{" "}
+              <span className="text-gold-300">Sanjay Naidu Caterers</span> in{" "}
+              <span className="text-gold-300">1990</span>. Over 35+ years, it
+              has grown into one of Central India's most trusted catering
+              houses.
             </p>
             <p>
               For{" "}
@@ -93,9 +94,11 @@ export function Story() {
               — bringing the same wedding-grade recipes to a daily table.
             </p>
             <p>
-              Every dish is cooked on live fire, spiced by hand, and tasted
-              by Sanjay ji himself before it reaches your plate. That is our
-              rule. That is the whole recipe.
+              In <span className="text-gold-300">2026</span>, that legacy
+              takes a new name —{" "}
+              <span className="text-gold-300">SwadIra</span>. Same kitchen,
+              same hands, same standards. A modern brand carrying forward
+              three decades of Sanjay ji's craft.
             </p>
           </motion.div>
         </div>
@@ -103,8 +106,8 @@ export function Story() {
         {/* Three small legacy notes */}
         <div className="mt-20 grid md:grid-cols-3 gap-8 border-t border-gold-500/20 pt-12">
           {[
-            { k: "1990", v: "Started in Jaripatka, Nagpur" },
-            { k: "Live Fire", v: "Every dish, every event" },
+            { k: "1990", v: "Sanjay Naidu Caterers founded, Nagpur" },
+            { k: "2026", v: "SwadIra launches — the legacy continues" },
             { k: "Vidarbha", v: "Family recipes, modern plating" },
           ].map((it, i) => (
             <motion.div

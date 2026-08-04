@@ -96,7 +96,7 @@ export function Hero() {
         >
           <span className="h-px w-10 bg-gold-400" />
           <span className="font-sans text-[0.68rem] tracking-[0.5em] uppercase text-gold-300">
-            Nagpur · Since 1990
+            Sanjay Naidu Caterers · Since 1990
           </span>
           <span className="h-px w-10 bg-gold-400" />
         </motion.div>
@@ -138,8 +138,9 @@ export function Hero() {
           transition={{ duration: 1, delay: 1.15 }}
           className="mt-6 max-w-2xl font-serif text-base md:text-lg text-cream-50/80 leading-relaxed"
         >
-          Nagpur's family catering house — cooking royal weddings, grand
-          parties and cherished celebrations for over 35 years.
+          Nagpur's trusted family catering house — Sanjay Naidu Caterers
+          since 1990, cooking royal weddings, grand parties and cherished
+          celebrations for over 35 years. Now reimagined as SwadIra.
         </motion.p>
 
         {/* Buttons */}

@@ -3,6 +3,9 @@ export const brand = {
   nameDev: "स्वाद",
   nameEn: "SwadIra",
   tagline: "A Legacy by Mr. Sanjay Naidu",
+  parent: "Sanjay Naidu Caterers",
+  parentFounded: "1990",
+  brandFounded: "2026",
   phone: "+91 93719 88960",
   email: "hello@swaadira.com",
   address: "Dharampeth, Nagpur, Maharashtra 440010",
@@ -45,14 +48,9 @@ export const services = [
 
 export const milestones = [
   {
-    year: "1984",
-    title: "The Beginning",
-    desc: "Sanjay Naidu takes his first catering order — a family wedding in Nagpur.",
-  },
-  {
     year: "1990",
-    title: "SwadIra is Born",
-    desc: "The family kitchen opens its doors in Jaripatka, Nagpur.",
+    title: "Sanjay Naidu Caterers is Born",
+    desc: "Sanjay Naidu founds Sanjay Naidu Caterers in Nagpur — a small family kitchen with a big promise.",
   },
   {
     year: "2005",
@@ -61,13 +59,13 @@ export const milestones = [
   },
   {
     year: "2015",
-    title: "Darbar Opens",
-    desc: "Launched Darbar Restaurant inside Rameson's Hotel — bringing our wedding-grade kitchen to daily diners.",
+    title: "Darbar Restaurant",
+    desc: "Opened Darbar Restaurant inside Rameson's Hotel — bringing our wedding-grade kitchen to daily diners.",
   },
   {
-    year: "2024",
-    title: "40 Years of Flavour",
-    desc: "Four decades. Three generations. Over 2,400 celebrations served across India.",
+    year: "2026",
+    title: "SwadIra is Born",
+    desc: "After 35+ years of Sanjay Naidu Caterers, the next chapter begins — SwadIra, a modern legacy brand carrying forward the same recipes and standards.",
   },
 ];
 
@@ -239,7 +237,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Three generations of trust. My grandfather booked Naidu ji, my father booked Sanjay ji, and now SwadIra served my son's engagement.",
+      "We have been booking Sanjay ji since the early 90s — first our wedding, then my son's. The kitchen has evolved into SwadIra, but the flavours are exactly as I remember them.",
     name: "Vikramaditya Rao",
     role: "Family Celebration · Ramdaspeth",
   },
@@ -297,7 +295,7 @@ export const gallery = [
 ];
 
 export const stats = [
-  { value: 40, suffix: "+", label: "Years of Experience" },
+  { value: 35, suffix: "+", label: "Years of Experience" },
   { value: 15, suffix: "", label: "Years at Gondwana Club" },
   { value: 2400, suffix: "+", label: "Events Catered" },
   { value: 180, suffix: "+", label: "Kitchen Artisans" },

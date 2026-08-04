@@ -36,7 +36,7 @@ const tiro = Tiro_Devanagari_Hindi({
 export const metadata: Metadata = {
   title: "SwadIra — A Legacy by Mr. Sanjay Naidu | Premium Catering in Nagpur",
   description:
-    "Weddings · Corporate · Private · Destination — three generations of Nagpur's most trusted catering, elevated for a modern celebration.",
+    "SwadIra — the modern legacy of Sanjay Naidu Caterers (est. 1990). Weddings · Corporate · Private · Destination catering across Nagpur and Central India.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
