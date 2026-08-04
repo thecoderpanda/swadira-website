@@ -12,13 +12,11 @@ export const brand = {
 };
 
 export const nav = [
-  { href: "/", label: "Home" },
+  { href: "/#about", label: "About" },
   { href: "/#legacy", label: "Legacy" },
   { href: "/#services", label: "Services" },
-  { href: "/menus", label: "Menus" },
-  { href: "/build-your-menu", label: "Plan Your Event" },
   { href: "/#darbar", label: "Darbar" },
-  { href: "/#voices", label: "Voices" },
+  { href: "/build-your-menu", label: "Plan Event" },
   { href: "/#contact", label: "Contact" },
 ];
 

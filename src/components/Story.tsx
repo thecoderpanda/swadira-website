@@ -74,18 +74,27 @@ export function Story() {
             className="md:col-span-7 space-y-5 font-serif text-base md:text-lg leading-relaxed text-cream-50/85"
           >
             <p>
-              We started in 1990 in a small lane of Jaripatka, Nagpur.
-              Sanjay Naidu inherited two things from his father — a big copper
-              pot, and a wooden box of spices.
+              Sanjay Naidu has been feeding Nagpur for over{" "}
+              <span className="text-gold-300">40 years</span>. What began as a
+              small family kitchen grew into one of Central India's most
+              trusted catering houses.
             </p>
             <p>
-              Thirty-five years later, we cook for grand weddings, office
-              parties and small family dinners. Some families have booked us
-              for three generations.
+              For{" "}
+              <span className="text-gold-300">
+                15 unbroken years he ran the in-house kitchen at the historic
+                Gondwana Club
+              </span>
+              , cooking for Nagpur's oldest members and their families.
+              Today, he also runs{" "}
+              <span className="text-gold-300">
+                Darbar Restaurant at Rameson's Hotel
+              </span>{" "}
+              — bringing the same wedding-grade recipes to a daily table.
             </p>
             <p>
               Every dish is cooked on live fire, spiced by hand, and tasted
-              by Sanjay ji himself before it reaches your table. That is our
+              by Sanjay ji himself before it reaches your plate. That is our
               rule. That is the whole recipe.
             </p>
           </motion.div>
