@@ -392,8 +392,8 @@ export default function BuildYourMenuPage() {
                   <Link href="/" className="btn-gold">
                     Back to Home
                   </Link>
-                  <Link href="/#darbar" className="btn-ghost">
-                    Visit Darbar
+                  <Link href="/menus" className="btn-ghost">
+                    Browse Menus
                   </Link>
                 </div>
               </motion.div>
