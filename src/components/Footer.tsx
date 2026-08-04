@@ -40,8 +40,8 @@ export function Footer() {
           <Image
             src="/logo.png"
             alt="स्वादIRA — A Legacy by Sanjay Naidu"
-            width={1353}
-            height={1077}
+            width={1500}
+            height={1023}
             className="h-24 md:h-28 w-auto object-contain opacity-95"
           />
           <div className="mt-6 flex items-center gap-4">

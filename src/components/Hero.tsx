@@ -121,10 +121,10 @@ export function Hero() {
           <Image
             src="/logo.png"
             alt="स्वादIRA — A Legacy by Sanjay Naidu"
-            width={1353}
-            height={1077}
+            width={1500}
+            height={1023}
             priority
-            className="relative w-[300px] sm:w-[420px] md:w-[560px] lg:w-[680px] h-auto"
+            className="relative w-[320px] sm:w-[460px] md:w-[600px] lg:w-[720px] h-auto"
           />
         </motion.div>
 

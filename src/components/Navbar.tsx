@@ -35,8 +35,8 @@ export function Navbar() {
             <Image
               src="/logo.png"
               alt="स्वादIRA — A Legacy by Sanjay Naidu"
-              width={1353}
-              height={1077}
+              width={1500}
+              height={1023}
               priority
               className="h-14 md:h-16 w-auto object-contain"
             />
@@ -85,8 +85,8 @@ export function Navbar() {
                 <Image
                   src="/logo.png"
                   alt="स्वादIRA"
-                  width={1353}
-                  height={1077}
+                  width={1500}
+                  height={1023}
                   className="h-12 w-auto"
                 />
                 <button
