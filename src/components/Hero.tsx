@@ -119,10 +119,10 @@ export function Hero() {
             }}
           />
           <Image
-            src="/logo.png"
+            src="/logo.svg"
             alt="स्वादIRA — A Legacy by Sanjay Naidu"
-            width={1500}
-            height={1023}
+            width={1536}
+            height={1024}
             priority
             className="relative w-[320px] sm:w-[460px] md:w-[600px] lg:w-[720px] h-auto"
           />

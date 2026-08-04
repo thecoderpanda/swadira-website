@@ -33,10 +33,10 @@ export function Navbar() {
         <div className="mx-auto max-w-7xl px-6 md:px-14 flex items-center justify-between gap-6">
           <a href="#home" className="flex items-center leading-none">
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="स्वादIRA — A Legacy by Sanjay Naidu"
-              width={1500}
-              height={1023}
+              width={1536}
+              height={1024}
               priority
               className="h-14 md:h-16 w-auto object-contain"
             />
@@ -83,10 +83,10 @@ export function Navbar() {
             <div className="flex flex-col h-full">
               <div className="flex items-center justify-between px-6 py-6">
                 <Image
-                  src="/logo.png"
+                  src="/logo.svg"
                   alt="स्वादIRA"
-                  width={1500}
-                  height={1023}
+                  width={1536}
+                  height={1024}
                   className="h-12 w-auto"
                 />
                 <button
