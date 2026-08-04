@@ -234,24 +234,32 @@ export const testimonials = [
       "Sanjay ji fed 1,800 guests at our daughter's wedding — the Saoji mutton had our Delhi relatives asking for recipes we cannot share.",
     name: "Anjali & Rohit Deshmukh",
     role: "Wedding · Civil Lines, Nagpur",
+    image:
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=80",
   },
   {
     quote:
       "We have been booking Sanjay ji since the early 90s — first our wedding, then my son's. The kitchen has evolved into SwadIra, but the flavours are exactly as I remember them.",
     name: "Vikramaditya Rao",
     role: "Family Celebration · Ramdaspeth",
+    image:
+      "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1400&q=80",
   },
   {
     quote:
       "The live chaat counter and the Vidarbha thali got a standing ovation from our Tokyo clients. A masterclass in Indian hospitality.",
     name: "Priya Sharma",
     role: "Corporate Gala · Hotel Radisson Blu",
+    image:
+      "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1400&q=80",
   },
   {
     quote:
       "For 15 years at the Gondwana Club, Sanjay ji's team never missed a beat. Members still ask when their kitchen is coming back.",
     name: "Col. R. K. Menon (Retd.)",
     role: "Former Committee Member · Gondwana Club",
+    image:
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80",
   },
 ];
 
