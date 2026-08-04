@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 900" fill="none" role="img" aria-label="स्वादIRA — A Legacy by Sanjay Naidu">
+  <defs>
+    <!-- Warm royal gold gradient (matches the logo image) -->
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F0D48A"/>
+      <stop offset="30%" stop-color="#E7C377"/>
+      <stop offset="55%" stop-color="#D9AE5C"/>
+      <stop offset="80%" stop-color="#B8863A"/>
+      <stop offset="100%" stop-color="#7C591F"/>
+    </linearGradient>
+    <linearGradient id="goldSoft" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#B8863A" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#B8863A" stop-opacity="0.9"/>
+      <stop offset="85%" stop-color="#B8863A" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#B8863A" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Reference uses deep maroon on cream. On our dark ink backdrop
+         we tint those glyphs cream so the shape stays readable. -->
+    <linearGradient id="maroon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAF1DA"/>
+      <stop offset="100%" stop-color="#E8D8B4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ============ TOP: gold arch ============ -->
+  <path d="M 130 340 Q 500 100 870 340"
+        stroke="url(#gold)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M 130 340 Q 500 105 870 340"
+        stroke="url(#gold)" stroke-width="1" fill="none" opacity="0.5" stroke-linecap="round"/>
+
+  <!-- ============ Crown ornament above steam ============ -->
+  <g transform="translate(500 165)" fill="url(#gold)">
+    <!-- upper diamond -->
+    <path d="M 0 -22 L 6 -14 L 0 -6 L -6 -14 Z" opacity="0.95"/>
+    <!-- teardrop finial -->
+    <path d="M 0 -30 C 4 -26 4 -22 0 -18 C -4 -22 -4 -26 0 -30 Z"/>
+    <!-- fleur wings -->
+    <path d="M 0 -6
+             C 14 -8 22 -2 30 8
+             C 20 6 12 4 4 6
+             Z" opacity="0.9"/>
+    <path d="M 0 -6
+             C -14 -8 -22 -2 -30 8
+             C -20 6 -12 4 -4 6
+             Z" opacity="0.9"/>
+    <!-- inner petals -->
+    <path d="M 0 0 C 6 4 8 10 4 14 C 0 10 -4 12 -4 14 C -8 10 -6 4 0 0 Z" opacity="0.9"/>
+  </g>
+
+  <!-- ============ Steam curls ============ -->
+  <g stroke="url(#gold)" stroke-width="2.4" fill="none" stroke-linecap="round">
+    <path d="M 484 268
+             C 476 258 476 246 484 236
+             C 492 226 492 214 484 204"/>
+    <path d="M 500 274
+             C 492 262 492 250 500 238
+             C 508 226 508 214 500 202"/>
+    <path d="M 516 268
+             C 524 258 524 246 516 236
+             C 508 226 508 214 516 204"/>
+  </g>
+
+  <!-- ============ Cloche (dome food cover) ============ -->
+  <g transform="translate(500 335)">
+    <!-- plate/base -->
+    <ellipse cx="0" cy="60" rx="82" ry="10" fill="url(#gold)"/>
+    <ellipse cx="0" cy="58" rx="82" ry="7" fill="#7C591F" opacity="0.5"/>
+    <!-- dome body -->
+    <path d="M -70 56
+             C -70 -8, -46 -38, 0 -38
+             C 46 -38, 70 -8, 70 56 Z"
+          fill="url(#gold)"/>
+    <!-- highlight -->
+    <path d="M -52 44
+             C -52 -4, -32 -30, -4 -30"
+          stroke="#F5E0A2" stroke-width="2.2" fill="none" opacity="0.7"/>
+    <!-- shadow -->
+    <path d="M 50 40 C 54 8 44 -20 20 -32" stroke="#7C591F" stroke-width="1.5" fill="none" opacity="0.55"/>
+    <!-- knob -->
+    <circle cx="0" cy="-42" r="6" fill="url(#gold)"/>
+    <rect x="-2" y="-46" width="4" height="6" fill="#7C591F" opacity="0.5"/>
+  </g>
+
+  <!-- ============ WORDMARK — स्वादIRA ============ -->
+  <!-- Devanagari स्वाद in deep maroon serif -->
+  <text x="145" y="560"
+        font-family="'Yatra One','Kalam','Noto Serif Devanagari','Tiro Devanagari Hindi',serif"
+        font-size="220"
+        font-weight="700"
+        fill="url(#maroon)"
+        letter-spacing="-4">स्वाद</text>
+
+  <!-- IRA in gold italic serif -->
+  <text x="540" y="640"
+        font-family="'Cormorant Garamond','Playfair Display','EB Garamond',Georgia,serif"
+        font-size="270"
+        font-weight="600"
+        font-style="italic"
+        fill="url(#gold)"
+        letter-spacing="-6">IRA</text>
+
+  <!-- Elegant swash under IRA -->
+  <path d="M 540 660
+           C 640 700, 780 700, 900 660"
+        stroke="url(#gold)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- ============ Ornamental divider (top) ============ -->
+  <g transform="translate(500 720)">
+    <!-- lines -->
+    <line x1="-260" y1="0" x2="-60" y2="0" stroke="url(#goldSoft)" stroke-width="1.4"/>
+    <line x1="60" y1="0" x2="260" y2="0" stroke="url(#goldSoft)" stroke-width="1.4"/>
+    <!-- outer dots -->
+    <circle cx="-260" cy="0" r="3" fill="url(#gold)"/>
+    <circle cx="260" cy="0" r="3" fill="url(#gold)"/>
+    <!-- center fleur ornament -->
+    <g fill="url(#gold)">
+      <path d="M 0 -16 C 3 -12 3 -6 0 -2 C -3 -6 -3 -12 0 -16 Z"/>
+      <circle cx="0" cy="-20" r="2.4"/>
+      <path d="M 0 -2
+               C 14 -4 22 2 28 12
+               C 18 10 8 8 2 10 Z" opacity="0.9"/>
+      <path d="M 0 -2
+               C -14 -4 -22 2 -28 12
+               C -18 10 -8 8 -2 10 Z" opacity="0.9"/>
+      <path d="M 0 6 C 6 10 6 14 0 18 C -6 14 -6 10 0 6 Z"/>
+    </g>
+  </g>
+
+  <!-- ============ Tagline ============ -->
+  <text x="500" y="795"
+        font-family="'Cormorant Garamond','Playfair Display',Georgia,serif"
+        font-size="40"
+        font-weight="500"
+        letter-spacing="10"
+        text-anchor="middle"
+        fill="url(#maroon)">A LEGACY BY SANJAY NAIDU</text>
+
+  <!-- ============ Ornamental divider (bottom) ============ -->
+  <g transform="translate(500 840)">
+    <line x1="-200" y1="0" x2="-30" y2="0" stroke="url(#goldSoft)" stroke-width="1"/>
+    <line x1="30" y1="0" x2="200" y2="0" stroke="url(#goldSoft)" stroke-width="1"/>
+    <circle cx="-200" cy="0" r="2.4" fill="url(#gold)"/>
+    <circle cx="200" cy="0" r="2.4" fill="url(#gold)"/>
+    <g fill="url(#gold)">
+      <path d="M 0 -10 C 2 -7 2 -3 0 0 C -2 -3 -2 -7 0 -10 Z"/>
+      <path d="M 0 0 C 10 -2 16 3 20 10 C 12 8 4 6 0 8 Z" opacity="0.9"/>
+      <path d="M 0 0 C -10 -2 -16 3 -20 10 C -12 8 -4 6 0 8 Z" opacity="0.9"/>
+    </g>
+  </g>
+</svg>
