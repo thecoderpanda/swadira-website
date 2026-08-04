@@ -5,7 +5,6 @@ import { Services } from "@/components/Services";
 import { MenuSelection } from "@/components/MenuSelection";
 import { Darbar } from "@/components/Darbar";
 import { Gallery } from "@/components/Gallery";
-import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
 
 export default function HomePage() {
@@ -18,7 +17,6 @@ export default function HomePage() {
       <MenuSelection />
       <Darbar />
       <Gallery />
-      <Testimonials />
       <Contact />
     </>
   );

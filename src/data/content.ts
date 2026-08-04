@@ -7,6 +7,7 @@ export const brand = {
   parentFounded: "1990",
   brandFounded: "2026",
   phone: "+91 93719 88960",
+  whatsapp: "919371988960",
   email: "hello@swaadira.com",
   address: "Dharampeth, Nagpur, Maharashtra 440010",
   instagram: "@swaad.ira",

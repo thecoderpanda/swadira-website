@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { eventTypes, cuisineOptions, brand } from "@/data/content";
 import { SplitText } from "@/components/SplitText";
-import { Check, ArrowRight, ArrowLeft } from "lucide-react";
+import { Check, ArrowRight, ArrowLeft, MessageCircle } from "lucide-react";
 
 type FormState = {
   event: string;
@@ -51,6 +51,22 @@ export default function BuildYourMenuPage() {
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
+    const msg = [
+      "*New Menu Brief from SwadIra website*",
+      "",
+      `*Name:* ${form.name || "—"}`,
+      `*Phone:* ${form.phone || "—"}`,
+      `*Email:* ${form.email || "—"}`,
+      `*Event:* ${form.event || "—"}`,
+      `*Cuisines:* ${form.cuisines.join(", ") || "—"}`,
+      `*Guests:* ${form.guests || "—"}`,
+      `*Date:* ${form.date || "—"}`,
+      "",
+      `*Notes:*`,
+      form.notes || "—",
+    ].join("\n");
+    const url = `https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(msg)}`;
+    if (typeof window !== "undefined") window.open(url, "_blank");
     setStep(4);
   };
 
@@ -431,8 +447,8 @@ export default function BuildYourMenuPage() {
                 disabled={!canAdvance}
                 className="btn-gold disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:transform-none"
               >
-                Send My Brief
-                <ArrowRight size={14} />
+                <MessageCircle size={14} />
+                Send on WhatsApp
               </button>
             )}
           </div>

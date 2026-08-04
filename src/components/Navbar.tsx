@@ -31,7 +31,7 @@ export function Navbar() {
         )}
       >
         <div className="mx-auto max-w-7xl px-6 md:px-14 flex items-center justify-between gap-6">
-          <a href="#home" className="flex items-center leading-none">
+          <a href="/" className="flex items-center leading-none">
             <Image
               src="/logo.svg"
               alt="स्वादIRA — A Legacy by Sanjay Naidu"

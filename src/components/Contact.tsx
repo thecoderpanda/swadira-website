@@ -3,10 +3,51 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { brand } from "@/data/content";
 import { SplitText } from "./SplitText";
-import { MapPin, Phone, Mail, Globe } from "lucide-react";
+import { MapPin, Phone, Mail, Globe, MessageCircle } from "lucide-react";
+
+type ContactForm = {
+  name: string;
+  phone: string;
+  email: string;
+  event: string;
+  guests: string;
+  notes: string;
+};
 
 export function Contact() {
   const [sent, setSent] = useState(false);
+  const [form, setForm] = useState<ContactForm>({
+    name: "",
+    phone: "",
+    email: "",
+    event: "",
+    guests: "",
+    notes: "",
+  });
+
+  const onChange =
+    <K extends keyof ContactForm>(k: K) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      setForm((f) => ({ ...f, [k]: e.target.value }));
+
+  const openWhatsApp = (e: React.FormEvent) => {
+    e.preventDefault();
+    const msg = [
+      "*New Enquiry from SwadIra website*",
+      "",
+      `*Name:* ${form.name || "—"}`,
+      `*Phone:* ${form.phone || "—"}`,
+      `*Email:* ${form.email || "—"}`,
+      `*Event:* ${form.event || "—"}`,
+      `*Guests:* ${form.guests || "—"}`,
+      "",
+      `*Notes:*`,
+      form.notes || "—",
+    ].join("\n");
+    const url = `https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(msg)}`;
+    if (typeof window !== "undefined") window.open(url, "_blank");
+    setSent(true);
+  };
 
   return (
     <section
@@ -30,7 +71,7 @@ export function Contact() {
           text="Tell us about your event. We'll take it from there."
         />
 
-        {/* 4 contact cards */}
+        {/* Contact cards */}
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 border-y border-gold-500/25 py-10">
           <ContactCard
             icon={MapPin}
@@ -74,8 +115,18 @@ export function Contact() {
             </div>
             <p className="mt-5 font-serif text-base text-cream-50/80 leading-relaxed max-w-md">
               A wedding, an office lunch, a family birthday — tell us what you
-              have in mind and we'll send back a menu within 24 hours.
+              have in mind and we'll reply on WhatsApp within the hour.
             </p>
+
+            <a
+              href={`https://wa.me/${brand.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-3 border border-gold-400/50 px-5 py-3 font-sans text-[0.65rem] tracking-[0.4em] uppercase text-gold-300 hover:bg-gold-400 hover:text-ink hover:border-gold-400 transition-all duration-500"
+            >
+              <MessageCircle size={14} />
+              Chat on WhatsApp
+            </a>
           </motion.div>
 
           <motion.form
@@ -83,25 +134,63 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.15 }}
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSent(true);
-            }}
+            onSubmit={openWhatsApp}
             className="lg:col-span-7 grid gap-8"
           >
-            <Field label="Your Name" name="name" required />
+            <Field
+              label="Your Name"
+              name="name"
+              required
+              value={form.name}
+              onChange={onChange("name")}
+            />
             <div className="grid md:grid-cols-2 gap-8">
-              <Field label="Phone" name="phone" type="tel" required />
-              <Field label="Email" name="email" type="email" required />
+              <Field
+                label="Phone"
+                name="phone"
+                type="tel"
+                required
+                value={form.phone}
+                onChange={onChange("phone")}
+              />
+              <Field
+                label="Email"
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={onChange("email")}
+              />
             </div>
             <div className="grid md:grid-cols-2 gap-8">
-              <Field label="Event Type" name="event" placeholder="Wedding, Corporate…" />
-              <Field label="Guests (approx.)" name="guests" type="number" placeholder="150" />
+              <Field
+                label="Event Type"
+                name="event"
+                placeholder="Wedding, Corporate…"
+                value={form.event}
+                onChange={onChange("event")}
+              />
+              <Field
+                label="Guests (approx.)"
+                name="guests"
+                type="number"
+                placeholder="150"
+                value={form.guests}
+                onChange={onChange("guests")}
+              />
             </div>
-            <TextArea label="Tell us about your celebration" name="notes" />
+            <TextArea
+              label="Tell us about your celebration"
+              name="notes"
+              value={form.notes}
+              onChange={onChange("notes")}
+            />
 
-            <button type="submit" className="btn-gold mt-4 self-start" disabled={sent}>
-              {sent ? "Thank you — we'll be in touch ✦" : "Send Enquiry"}
+            <button
+              type="submit"
+              className="btn-gold mt-4 self-start inline-flex items-center gap-3"
+            >
+              <MessageCircle size={16} />
+              {sent ? "Opened on WhatsApp ✦" : "Send on WhatsApp"}
             </button>
           </motion.form>
         </div>
@@ -131,10 +220,7 @@ function ContactCard({
       viewport={{ once: true, margin: "-60px" }}
       transition={{ delay, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
     >
-      <Wrap
-        href={href}
-        className="group block relative py-2"
-      >
+      <Wrap href={href} className="group block relative py-2">
         <div className="flex items-center gap-3 mb-6 text-gold-300">
           <Icon size={16} />
           <span className="font-sans text-[0.7rem] tracking-[0.45em] uppercase">
@@ -155,12 +241,16 @@ function Field({
   type = "text",
   required,
   placeholder,
+  value,
+  onChange,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
   placeholder?: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }) {
   return (
     <label className="block group">
@@ -172,13 +262,25 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
         className="w-full bg-transparent border-b border-gold-500/40 py-3 font-serif text-cream-50 text-lg placeholder:text-cream-50/30 focus:outline-none focus:border-gold-300 transition-colors"
       />
     </label>
   );
 }
 
-function TextArea({ label, name }: { label: string; name: string }) {
+function TextArea({
+  label,
+  name,
+  value,
+  onChange,
+}: {
+  label: string;
+  name: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+}) {
   return (
     <label className="block">
       <span className="block font-sans text-[0.65rem] tracking-[0.45em] uppercase text-gold-300 mb-3">
@@ -187,6 +289,8 @@ function TextArea({ label, name }: { label: string; name: string }) {
       <textarea
         name={name}
         rows={3}
+        value={value}
+        onChange={onChange}
         className="w-full bg-transparent border-b border-gold-500/40 py-3 font-serif text-cream-50 text-lg placeholder:text-cream-50/30 focus:outline-none focus:border-gold-300 transition-colors resize-none"
       />
     </label>
