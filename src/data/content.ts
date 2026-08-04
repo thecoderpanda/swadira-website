@@ -12,14 +12,14 @@ export const brand = {
 };
 
 export const nav = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#legacy", label: "Legacy" },
-  { href: "#services", label: "Services" },
-  { href: "#darbar", label: "Darbar" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#voices", label: "Voices" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/#legacy", label: "Legacy" },
+  { href: "/#services", label: "Services" },
+  { href: "/menus", label: "Menus" },
+  { href: "/build-your-menu", label: "Plan Your Event" },
+  { href: "/#darbar", label: "Darbar" },
+  { href: "/#voices", label: "Voices" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export const services = [
@@ -82,27 +82,154 @@ export const darbar = {
   cta: "Reserve a Table",
 };
 
+// ─────────────────────────────────────────────────────────────────
+// Menu — categories with only *sample* dishes on display.
+// The full master menu book is offered on request via the CTA.
+// ─────────────────────────────────────────────────────────────────
 export const menuCategories = [
   {
-    name: "Vidarbha Signatures",
-    tag: "Regional",
-    items: [
-      { name: "Saoji Mutton", desc: "Nagpur's fiery black-spice curry, slow-cooked for six hours." },
-      { name: "Varhadi Bharli Vangi", desc: "Baby brinjals stuffed with coconut, peanut and jaggery masala." },
-      { name: "Zunka Bhakri Thali", desc: "Rustic besan zunka served with jowar bhakri and thecha." },
-      { name: "Patodi Rassa", desc: "Steamed gram-flour rolls simmered in a spiced coconut gravy." },
+    slug: "wedding",
+    number: "01",
+    title: "Wedding Menus",
+    kicker: "Sangeet · Haldi · Reception",
+    desc: "Multi-course wedding thalis with live stations, regional signatures and hand-picked desserts, curated for 200 to 5,000 guests.",
+    image:
+      "https://images.unsplash.com/photo-1517244683847-7456b63c5969?auto=format&fit=crop&w=1400&q=80",
+    samples: [
+      "Saoji Mutton · Vidarbha classic",
+      "Dum Awadhi Biryani",
+      "Paneer Lababdar",
+      "Puran Poli & Basundi",
     ],
   },
   {
-    name: "Royal North Indian",
-    tag: "Classic",
-    items: [
-      { name: "Dum Awadhi Biryani", desc: "Long-grain basmati sealed with saffron, kewra and slow-cooked meats." },
-      { name: "Paneer Lababdar", desc: "Cottage cheese in a velvety tomato-cashew gravy, finished with kasuri methi." },
-      { name: "Dal Bukhara", desc: "Black lentils simmered overnight with tomato, cream and smoked butter." },
-      { name: "Kakori Kebab", desc: "Silken minced-lamb skewers, spiced with rose petals and green cardamom." },
+    slug: "corporate",
+    number: "02",
+    title: "Corporate Menus",
+    kicker: "Boardroom · Gala · Launch",
+    desc: "Plated and buffet menus with international touches, timed to your run-of-show — from boardroom lunches to award-night galas.",
+    image:
+      "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1400&q=80",
+    samples: [
+      "Executive Plated Lunch",
+      "Mediterranean Live Station",
+      "Continental Grill",
+      "Artisan Coffee Bar",
     ],
   },
+  {
+    slug: "premium",
+    number: "03",
+    title: "Premium Menus",
+    kicker: "Signature · Curated",
+    desc: "Our chef's personal shortlist — small-plate tasting menus, single-origin ingredients and heritage recipes reserved for special evenings.",
+    image:
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80",
+    samples: [
+      "Kashmiri Wazwan Tasting",
+      "Nizami 9-Course Menu",
+      "Saoji Degustation",
+      "Hand-Pounded Kebab Platter",
+    ],
+  },
+  {
+    slug: "traditional",
+    number: "04",
+    title: "Traditional Menus",
+    kicker: "Vidarbha · Maharashtrian",
+    desc: "Family recipes passed down three generations — Varhadi, Saoji, Konkan and Maharashtrian classics served the way home cooks intended.",
+    image:
+      "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1400&q=80",
+    samples: [
+      "Grand Vidarbha Thali",
+      "Zunka Bhakri & Thecha",
+      "Patodi Rassa",
+      "Varhadi Bharli Vangi",
+    ],
+  },
+  {
+    slug: "live-counters",
+    number: "05",
+    title: "Live Counter Options",
+    kicker: "Chaat · Tandoor · Global",
+    desc: "Interactive live stations manned by our chefs — from Bombay chaat carts to open-flame tandoor pits and wok-tossed pan-Asian bars.",
+    image:
+      "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=1400&q=80",
+    samples: [
+      "Bombay Chaat Cart",
+      "Live Tandoor Pit",
+      "Pan-Asian Wok Bar",
+      "Chettinad Dosa Station",
+    ],
+  },
+  {
+    slug: "high-tea",
+    number: "06",
+    title: "High Tea & Snacks",
+    kicker: "Afternoon · Cocktail",
+    desc: "Delicate finger food, kebab platters and artisan tea services designed for engagements, kitty parties and cocktail evenings.",
+    image:
+      "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=1400&q=80",
+    samples: [
+      "Assorted Silver Kebab Platter",
+      "Cucumber & Mint Tea Sandwich",
+      "Masala Chai Kettle Service",
+      "Mini Pav Bhaji Slider",
+    ],
+  },
+  {
+    slug: "breakfast",
+    number: "07",
+    title: "Breakfast Menus",
+    kicker: "Morning · Poolside",
+    desc: "Warm, comforting mornings — regional Indian breakfasts, continental spreads and live station options for stay-in weddings and retreats.",
+    image:
+      "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1400&q=80",
+    samples: [
+      "Poha Jalebi & Filter Coffee",
+      "South Indian Tiffin Counter",
+      "Continental Buffet",
+      "Fresh-Pressed Juice Bar",
+    ],
+  },
+  {
+    slug: "dessert-beverage",
+    number: "08",
+    title: "Dessert & Beverage Selections",
+    kicker: "Sweets · Mocktails · Coffee",
+    desc: "Signature Indian mithai, plated western desserts, mocktail bars, artisan coffee counters and hand-crafted paan stations.",
+    image:
+      "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=1400&q=80",
+    samples: [
+      "Puran Poli & Basundi",
+      "Rose Kulfi Falooda",
+      "Live Jalebi Kadhai",
+      "Signature Mocktail Bar",
+    ],
+  },
+];
+
+// Build-Your-Menu form vocabulary
+export const eventTypes = [
+  "Wedding",
+  "Reception",
+  "Sangeet / Haldi",
+  "Engagement",
+  "Corporate Event",
+  "Birthday",
+  "Private Dinner",
+  "Destination Event",
+];
+
+export const cuisineOptions = [
+  "North Indian",
+  "South Indian",
+  "Maharashtrian / Vidarbha",
+  "Mughlai / Awadhi",
+  "Chinese",
+  "Continental",
+  "Live Counters",
+  "Chef's Choice",
 ];
 
 export const testimonials = [

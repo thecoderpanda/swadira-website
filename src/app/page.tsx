@@ -2,6 +2,7 @@ import { Hero } from "@/components/Hero";
 import { Story } from "@/components/Story";
 import { Milestones } from "@/components/Milestones";
 import { Services } from "@/components/Services";
+import { MenusTeaser } from "@/components/MenusTeaser";
 import { Darbar } from "@/components/Darbar";
 import { Gallery } from "@/components/Gallery";
 import { Testimonials } from "@/components/Testimonials";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Story />
       <Milestones />
       <Services />
+      <MenusTeaser />
       <Darbar />
       <Gallery />
       <Testimonials />
