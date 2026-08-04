@@ -131,12 +131,22 @@ export function Hero() {
           />
         </motion.div>
 
+        {/* Signature tagline */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1, delay: 1.1 }}
+          className="mt-8 font-display italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-gold-gradient max-w-4xl"
+        >
+          Every celebration deserves an unforgettable feast.
+        </motion.p>
+
         {/* Short warm description */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.15 }}
-          className="mt-6 max-w-2xl font-serif text-base md:text-lg text-cream-50/80 leading-relaxed"
+          transition={{ duration: 1, delay: 1.35 }}
+          className="mt-6 max-w-2xl font-serif text-sm md:text-base text-cream-50/75 leading-relaxed"
         >
           Nagpur's trusted family catering house — Sanjay Naidu Caterers
           since 1990, cooking royal weddings, grand parties and cherished
