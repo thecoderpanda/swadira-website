@@ -128,12 +128,26 @@ export function Hero() {
           />
         </motion.div>
 
+        {/* Elegant, readable tagline — larger than the baked SVG one */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1, delay: 1.15 }}
+          className="mt-10 flex items-center gap-5"
+        >
+          <span className="h-px w-8 md:w-14 bg-gold-400/70" />
+          <span className="font-serif italic text-gold-gradient text-xl sm:text-2xl md:text-3xl tracking-wide whitespace-nowrap">
+            A Legacy by Mr. Sanjay Naidu
+          </span>
+          <span className="h-px w-8 md:w-14 bg-gold-400/70" />
+        </motion.div>
+
         {/* Short warm description */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.3 }}
-          className="mt-8 max-w-2xl font-serif text-lg md:text-xl text-cream-50/85 leading-relaxed"
+          transition={{ duration: 1, delay: 1.4 }}
+          className="mt-6 max-w-2xl font-serif text-base md:text-lg text-cream-50/80 leading-relaxed"
         >
           Nagpur's family catering house — cooking royal weddings, grand
           parties and cherished celebrations for over 35 years.

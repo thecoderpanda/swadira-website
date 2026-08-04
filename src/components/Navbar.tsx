@@ -24,10 +24,10 @@ export function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
         className={cn(
-          "fixed top-0 inset-x-0 z-50 transition-all duration-500",
+          "fixed top-0 inset-x-0 z-50 transition-all duration-500 backdrop-blur-xl border-b",
           scrolled
-            ? "bg-ink/85 backdrop-blur-xl border-b border-gold-500/15 py-3"
-            : "bg-transparent py-6",
+            ? "bg-ink/95 border-gold-500/25 py-3 shadow-[0_10px_40px_-20px_rgba(0,0,0,0.8)]"
+            : "bg-ink/80 border-gold-500/15 py-4",
         )}
       >
         <div className="mx-auto max-w-7xl px-6 md:px-14 flex items-center justify-between gap-6">
