@@ -87,8 +87,10 @@ export function Contact() {
           <ContactCard
             icon={Phone}
             label="Call"
-            value={brand.phone}
-            href={`tel:${brand.phone.replace(/\s/g, "")}`}
+            lines={brand.phones.map((p) => ({
+              text: p,
+              href: `tel:${p.replace(/\s/g, "")}`,
+            }))}
             delay={0.08}
           />
           <ContactCard
@@ -219,15 +221,17 @@ function ContactCard({
   label,
   value,
   href,
+  lines,
   delay,
 }: {
   icon: React.ComponentType<{ size?: number }>;
   label: string;
-  value: string;
+  value?: string;
   href?: string;
+  lines?: { text: string; href?: string }[];
   delay: number;
 }) {
-  const Wrap = href ? "a" : "div";
+  const Wrap = href && !lines ? "a" : "div";
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -235,16 +239,39 @@ function ContactCard({
       viewport={{ once: true, margin: "-60px" }}
       transition={{ delay, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
     >
-      <Wrap href={href} className="group block relative py-2">
+      <Wrap href={lines ? undefined : href} className="group block relative py-2">
         <div className="flex items-center gap-3 mb-6 text-gold-300">
           <Icon size={16} />
           <span className="font-sans text-[0.7rem] tracking-[0.45em] uppercase">
             {label}
           </span>
         </div>
-        <div className="font-display text-lg md:text-xl text-cream-50 group-hover:text-gold-gradient transition-colors leading-snug">
-          {value}
-        </div>
+        {lines ? (
+          <div className="flex flex-col gap-2">
+            {lines.map((l) =>
+              l.href ? (
+                <a
+                  key={l.text}
+                  href={l.href}
+                  className="font-display text-lg md:text-xl text-cream-50 hover:text-gold-gradient transition-colors leading-snug"
+                >
+                  {l.text}
+                </a>
+              ) : (
+                <span
+                  key={l.text}
+                  className="font-display text-lg md:text-xl text-cream-50 leading-snug"
+                >
+                  {l.text}
+                </span>
+              ),
+            )}
+          </div>
+        ) : (
+          <div className="font-display text-lg md:text-xl text-cream-50 group-hover:text-gold-gradient transition-colors leading-snug">
+            {value}
+          </div>
+        )}
       </Wrap>
     </motion.div>
   );

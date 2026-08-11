@@ -118,12 +118,17 @@ export function Footer() {
             <ul className="space-y-4 font-serif text-cream-50/80 text-[15px]">
               <li className="flex items-start gap-3">
                 <Phone size={14} className="text-gold-300 mt-1 shrink-0" />
-                <a
-                  href={`tel:${brand.phone.replace(/\s/g, "")}`}
-                  className="hover:text-gold-300 transition"
-                >
-                  {brand.phone}
-                </a>
+                <div className="flex flex-col gap-1">
+                  {brand.phones.map((p) => (
+                    <a
+                      key={p}
+                      href={`tel:${p.replace(/\s/g, "")}`}
+                      className="hover:text-gold-300 transition"
+                    >
+                      {p}
+                    </a>
+                  ))}
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={14} className="text-gold-300 mt-1 shrink-0" />
