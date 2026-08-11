@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { brand } from "@/data/content";
 import { SplitText } from "./SplitText";
-import { MapPin, Phone, Mail, Globe, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 
 type ContactForm = {
   name: string;
@@ -77,7 +77,7 @@ export function Contact() {
         />
 
         {/* Contact cards */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 border-y border-gold-500/25 py-10">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 border-y border-gold-500/25 py-10">
           <ContactCard
             icon={MapPin}
             label="Visit"
@@ -99,12 +99,6 @@ export function Contact() {
             value={brand.email}
             href={`mailto:${brand.email}`}
             delay={0.16}
-          />
-          <ContactCard
-            icon={Globe}
-            label="Web"
-            value={brand.website}
-            delay={0.24}
           />
         </div>
 
@@ -268,7 +262,7 @@ function ContactCard({
             )}
           </div>
         ) : (
-          <div className="font-display text-lg md:text-xl text-cream-50 group-hover:text-gold-gradient transition-colors leading-snug">
+          <div className="font-display text-base sm:text-lg md:text-xl text-cream-50 group-hover:text-gold-gradient transition-colors leading-snug break-words">
             {value}
           </div>
         )}
