@@ -111,7 +111,7 @@ export function Hero() {
           {/* Soft cream aura so the maroon glyphs stay readable on dark bg */}
           <div
             aria-hidden
-            className="absolute inset-0 -m-16 rounded-full"
+            className="absolute inset-0 -m-10 rounded-full"
             style={{
               background:
                 "radial-gradient(ellipse at center, rgba(250,241,218,0.22) 0%, rgba(250,241,218,0.08) 40%, rgba(250,241,218,0) 70%)",
@@ -124,7 +124,7 @@ export function Hero() {
             width={3164}
             height={3289}
             priority
-            className="relative w-[320px] sm:w-[460px] md:w-[600px] lg:w-[720px] h-auto"
+            className="relative w-[200px] sm:w-[280px] md:w-[360px] lg:w-[440px] h-auto"
             style={{
               filter: "drop-shadow(0 10px 30px rgba(0,0,0,0.55))",
             }}
