@@ -38,10 +38,10 @@ export function Footer() {
         {/* Centered brand block */}
         <div className="flex flex-col items-center text-center">
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="स्वादIRA — A Legacy by Sanjay Naidu"
-            width={1536}
-            height={1024}
+            width={3164}
+            height={3289}
             className="h-24 md:h-28 w-auto object-contain opacity-95"
           />
           <div className="mt-6 flex items-center gap-4">
